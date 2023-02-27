@@ -10,9 +10,8 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 
 @Configuration
 public class ThymeleafConfig {
-
     @Bean
-    public SpringResourceTemplateResolver thymeleafTemplateResolver(
+    public SpringResourceTemplateResolver springResourceTemplateResolver (
             SpringResourceTemplateResolver defaultTemplateResolver,
             Thymeleaf3Properties thymeleaf3Properties
     ) {
@@ -26,10 +25,8 @@ public class ThymeleafConfig {
     @ConstructorBinding
     @ConfigurationProperties("spring.thymeleaf3")
     public static class Thymeleaf3Properties {
-        /**
-         * Use Thymeleaf 3 Decoupled Logic
-         */
         private final boolean decoupledLogic;
-
     }
+
 }
+
